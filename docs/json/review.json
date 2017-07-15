@@ -1,0 +1,108 @@
+{
+    "basePath": "http://s5technology.com/demo/apparel/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/review",
+    "apis": [
+        {
+            "path": "review/detail",
+            "description": "Reviews",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Review Detail",
+                    "nickname": "productReview",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "page",
+                            "type": "integer",
+                            "required": true,
+                            "description": "Page number"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "product_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "Product Id "
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns product reviews"
+                }
+            ]
+        },
+        {
+            "path": "review/save",
+            "description": "Write new review",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Saves new review",
+                    "nickname": "reviewProduct",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "review",
+                            "required": true,
+                            "description": "review information"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Saves customer's review for an item",
+                    "consumes": [
+                        "text/plain",
+                        "application/json"
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "review": {
+            "id": "review",
+            "required": [
+                "device_id",
+                "product_id",
+                "product_rank"
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "integer"
+                },
+                "product_review": {
+                    "type": "string"
+                },
+                "product_rank": {
+                    "type": "integer"
+                },
+                "device_id": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "basePath": "http://s5technology.com/demo/apparel/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/delivery",
+    "apis": [
+        {
+            "path": "delivery/cost",
+            "description": "Delivery Cost Policy",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Delivery Cost List",
+                    "nickname": "deliveryCost",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns a list of delivery rates on the basis of distance in KMs"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "text/html"
+    ]
+}

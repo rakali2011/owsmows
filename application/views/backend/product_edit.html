@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html><!-- <![endif]-->
+<head>
+	<title>ONLINE DUKAAN ADMIN PANEL</title>
+	
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- 
+	**********************************************************
+	In development, use the LESS files and the less.js compiler
+	instead of the minified CSS loaded by default.
+	**********************************************************
+	<link rel="stylesheet/less" href="../assets/less/admin/module.admin.page.index.less" />
+	-->
+	
+		<!--[if lt IE 9]><link rel="stylesheet" href="../assets/components/library/bootstrap/css/bootstrap.min.css" /><![endif]-->
+	<link rel="stylesheet" href="../assets/css/admin/module.admin.page.form_elements.min.css" />
+	<link rel="stylesheet" href="../assets/css/admin/module.admin.page.file_managers.min.css" />
+	<link rel="stylesheet" href="../assets/css/admin/style_mine.css" />
+	
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	<script src="../assets/components/library/jquery/jquery.min.js?v=v1.2.3"></script>
+<script src="../assets/components/library/jquery/jquery-migrate.min.js?v=v1.2.3"></script>
+<script src="../assets/components/library/modernizr/modernizr.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/less-js/less.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/charts/flot/assets/lib/excanvas.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/browser/ie/ie.prototype.polyfill.js?v=v1.2.3"></script>
+<script src="../assets/components/library/jquery-ui/js/jquery-ui.min.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js?v=v1.2.3"></script>
+</head>
+<body class="">
+
+		<div class="navbar navbar-fixed-top navbar-primary main" role="navigation">
+    
+    <div class="navbar-header pull-left">
+        <div class="navbar-brand">
+            <div class="pull-left">
+                <a href="" class="toggle-button toggle-sidebar btn-navbar"><i class="fa fa-bars"></i></a>
+            </div>
+            <a href="index.html?lang=en" class="appbrand innerL">Online Dukaan</a>
+        </div>
+    </div>
+  
+    <ul class="nav navbar-nav navbar-left">
+        <li class=" hidden-xs">
+            <form class="navbar-form navbar-left " role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type in here..."/>
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-inverse"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </li>
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle user" data-toggle="dropdown"> <img src="../assets/images/people/35/8.jpg" alt="" class="img-circle"/><span class="hidden-xs hidden-sm"> &nbsp; Adrian Demian </span> <span class="caret"></span></a>
+            <ul class="dropdown-menu list pull-right ">
+                <li><a href="my_account.html">Edit Account <i class="fa fa-pencil pull-right"></i></a></li>
+                <li><a href="#">Log out <i class="fa fa-sign-out pull-right"></i></a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right hidden-xs">
+        <li class="dropdown notification hidden-sm hidden-md widget-timeline">
+            <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown"><i class="fa fa-fw fa-exclamation-circle"></i><span class="badge badge-info">4</span></a>
+            <ul class="dropdown-menu list-timeline notification_new">
+               <li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+            </ul>
+        </li>
+        <li><a href="" class="menu-icon"><i class="fa fa-sign-out"></i></a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+	
+	<div id="menu" class="hidden-print hidden-xs">
+	<div class="sidebar sidebar-inverse">
+		
+		<div class="sidebarMenuWrapper">
+			<ul class="list-unstyled">
+				<li><a href="index.html?lang=en"><i class=" icon-projector-screen-line"></i><span>Dashboard</span></a></li>
+				<li class="hasSubmenu order_alert">
+					<a href="#" data-target="#shop" data-toggle="collapse"><i class="icon-shopping-cart"></i>Orders<span>2</span></a>
+					<ul class="collapse " id="shop">
+						<li><a href="latest_orders.html">Latest Orders<span>2</span></a></li>
+						<li><a href="pending_orders.html">Pending Orders<span>2</span></a></li>
+						<li><a href="rejected_orders.html">Rejected Orders</a></li>
+						<li><a href="delivered_orders.html">Delivered Orders</a></li>
+					</ul>
+				</li>
+				<li class="hasSubmenu order_alert active">
+					<a href="#" data-target="#item" data-toggle="collapse"><i class="icon-shopping-cart"></i>Add Items</a>
+					<ul class=" in" id="item">
+						<li><a href="add_item.html">Add product</a></li>
+						<li class="active"><a href="shop_products.html?lang=en">Products</a></li>
+					</ul>
+				</li>
+				<li class="hasSubmenu order_alert">
+					<a href="#" data-target="#categories" data-toggle="collapse"><i class="icon-shopping-cart"></i>Categories</a>
+					<ul class="collapse " id="categories">
+						<li><a href="add_category.html">Add Categories</a></li>
+						<li><a href="view_category.html">View Categories</a></li>
+						<li><a href="add_subcategory.html">Add Sub Categories</a></li>
+						<li><a href="view_subcategory.html">View Sub Categories</a></li>
+					</ul>
+				</li>
+				<li><a href="return_policy.html"><i class=" icon-flip-camera-fill"></i><span>Return Policy</span></a></li>
+				<li><a href="dispute.html"><i class=" icon-flip-camera-fill"></i><span>Dispute Management</span></a></li>
+				<li><a href="about.html"><i class=" icon-flip-camera-fill"></i><span>About Us</span></a></li>
+				
+				
+			
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div id="content">
+
+	<div class="heading-buttons bg-white border-bottom innerAll">
+		<a href="add_item.html" class="btn btn-xs pull-right btn-success">Add product</a>
+		<a href="shop_products.html?lang=en" class="btn btn-xs pull-right btn-primary">Back To Products</a>
+		<h1 class="content-heading padding-none pull-left">Edit Product</h1>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="innerLR" style="padding-top: 15px;">
+	
+		<!-- Widget -->
+		<div class="widget widget-inverse" >
+
+			<!-- Widget heading -->
+			<div class="widget-head">
+				<h4 class="heading">Default Inputs</h4>
+			</div>
+			<!-- // Widget heading END -->
+			
+			<div class="widget-body">
+				<div class="innerB input_mine">
+					<div class="row">
+						<div class="col-md-4">
+							<label>Item Name</label>
+							<input type="text" placeholder="Item name will be displayed here" class="form-control" />
+						</div>
+						
+						<div class="col-md-4">
+							<label>Select Category</label>
+							<select class="selectpicker col-md-12" >
+								<option>Men</option>
+								<option>Women</option>
+								<option>Kids</option>
+							</select>
+						</div>
+						
+						<div class="col-md-4">
+							<label>Select Sub-Category</label>
+							<select class="selectpicker col-md-12" >
+								<optgroup label="Tops">
+									<option>Qameez</option>
+									<option>Shirts</option>
+									<option>Kurta</option>
+								</optgroup>
+								<optgroup label="Foot Wear">
+									<option>Scandals</option>
+									<option>Slippers</option>
+									<option>Flip Flops</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="col-md-6">
+							<div class="row innerLR">
+								<label>Select Colors</label>
+								<select multiple="multiple" style="width: 100%;" id="select2_2">
+								   <optgroup label="Colors">
+									    <option value="">Highlight</option>
+										<option value="#000000" class="black_mine" style="background-color: Black;color: #FFFFFF;">Black</option>
+										<option value="#808080" class="gray_mine" style="">Gray</option>
+										<option value="#A9A9A9" class="darkgray" style="">DarkGray</option>
+										<option value="#D3D3D3" class="lightgray" style="">LightGray</option>
+										<option value="#FFFFFF" class="white_mine" style="">White</option>
+										<option value="#7FFFD4" class="Aquamarine" style="">Aquamarine</option>
+										<option value="#0000FF" class="Blue" style="">Blue</option>
+										<option value="#000080" class="Navy" style="">Navy</option>
+										<option value="#800080" class="Purple" style="">Purple</option>
+										<option value="#FF1493" class="DeepPink" style="">DeepPink</option>
+										<option value="#EE82EE" class="Violet" style="">Violet</option>
+										<option value="#FFC0CB" class="Pink" style="">Pink</option>
+										<option value="#006400" class="DarkGreen" style="">DarkGreen</option>
+										<option value="#008000" class="Green" style="">Green</option>
+										<option value="#9ACD32" class="YellowGreen" style="">YellowGreen</option>
+										<option value="#FFFF00" class="Yellow" style="">Yellow</option>
+										<option value="#FFA500" class="Orange" style="">Orange</option>
+										<option value="#FF0000" class="Red" style="">Red</option>
+										<option value="#A52A2A" class="Brown" style="">Brown</option>
+										<option value="#DEB887" class="BurlyWood" style="">BurlyWood</option>
+										<option value="#F5F5DC" class="Beige" style="">Beige</option>
+								   </optgroup>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label>Stock Quanity</label>
+							<input type="number" placeholder="10" class="form-control"></input>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<label>Product Code</label>
+							<input type="text" placeholder="145786" class="form-control"></input>
+						</div>
+						
+						
+						
+						<div class="col-md-6">
+							<label>Sizes</label><br/>
+							<div class="btn-group my_toggles" data-toggle="buttons">
+								<label class="btn btn-success ">
+									<input type="checkbox" checked="checked"> S
+								</label>
+								<label class="btn btn-success active">
+									<input type="checkbox" checked="checked"> M
+								</label>
+								<label class="btn btn-success">
+									<input type="checkbox"> L
+								</label>
+								<label class="btn btn-success">
+									<input type="checkbox"> XL
+								</label>
+								<label class="btn btn-success">
+									<input type="checkbox"> XXL
+								</label>
+							</div>
+								
+							<!-- Form Modal 1 -->
+							<a href="#modal-1" data-toggle="modal"  class="btn btn-primary"> Add More Sizes</a>
+								
+							<!-- Modal -->
+							<div class="modal fade" id="modal-1">
+								
+								<div class="modal-dialog">
+									<div class="modal-content">
+
+										<!-- Modal heading -->
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h3 class="modal-title">Add Sizes</h3>
+										</div>
+										<!-- // Modal heading END -->
+										
+										<!-- Modal body -->
+										<div class="modal-body">
+											<form class="form-horizontal" role="form">
+												<div class="form-group">
+													<label for="inputEmail3" class="col-sm-2 control-label">Enter Size</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control" id="inputEmail3" placeholder="Enter Size">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-offset-2 col-sm-10">
+														<button type="submit" class="btn btn-primary">Add</button>
+													</div>
+												</div>
+											</form>
+
+
+
+
+										</div>
+										<!-- // Modal body END -->
+								
+									</div>
+								</div>
+								
+							</div>
+							<!-- // Modal END -->
+
+						</div>
+					</div>
+					
+
+					<!-- Widget -->
+					<div class="widget row widget-heading-simple widget-body-gray" style="margin:0px; margin-bottom:20px; margin-top:20px;">
+						
+						<!-- Widget heading -->
+						<div class="widget-head">
+							<label>Description</label>
+						</div>
+						<!-- // Widget heading END -->
+						
+						<div class="widget-body">
+							<textarea id="mustHaveId" class="wysihtml5 col-md-12 form-control" rows="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</textarea>
+						</div>
+					</div>
+					<!-- // Widget END -->
+
+						
+					<div class="row innerB">
+						<div class="col-md-6 my_toggle_btn">
+								
+							<label>Percentage Discount</label>
+							
+							<form id="formInput" class="my_btn" >
+								<button type="button" class="btn btn-success" id="lock"><span>Enable</span></button>
+								<button type="button" class="btn btn-primary"  id="dis"><span>Disable</span></button>
+								
+								<input type="text" disabled="disabled" id="sender" placeholder="Enter Discount"/>
+							</form>
+	
+						</div>
+						
+						<div class="col-md-6 my_toggle_btn">
+								
+							<label>Promo Offer</label>
+							
+							<form id="formInput" class="my_input" >
+								<div class="col-md-6">
+								<input type="checkbox" name="vehicle" value="buy1"> Buy One Get One Free<br>
+								</div>
+								<div class="col-md-6">
+								<input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
+								</div>
+							</form>
+							
+							<!-- Form Modal 1 -->
+							<a href="#modal-promo" data-toggle="modal"  class="btn btn-primary"> Add More Promo Offers</a>
+								
+							<!-- Modal -->
+							<div class="modal fade" id="modal-promo">
+								
+								<div class="modal-dialog">
+									<div class="modal-content">
+
+										<!-- Modal heading -->
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h3 class="modal-title">Add Promo Offer</h3>
+										</div>
+										<!-- // Modal heading END -->
+										
+										<!-- Modal body -->
+										<div class="modal-body">
+											<form class="form-horizontal" role="form">
+												<div class="form-group">
+													<label for="inputEmail3" class="col-sm-3 control-label">Enter Promo Offer</label>
+													<div class="col-sm-9">
+														<input type="text" class="form-control" id="inputEmail3" placeholder="Enter Promo">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-offset-2 col-sm-10">
+														<button type="submit" class="btn btn-primary">Add</button>
+													</div>
+												</div>
+											</form>
+
+
+
+
+										</div>
+										<!-- // Modal body END -->
+								
+									</div>
+								</div>
+								
+							</div>
+							<!-- // Modal END -->
+
+	
+						</div>
+						
+						<div class="col-md-12" style="margin-top:20px;">
+								
+							<!-- Widget -->
+							<div class="widget widget-inverse">
+								
+								
+								<div class="widget-body">
+									<div class="row">
+										<div class="col-md-12 img_thumnail">
+											<label>Main Image For Item</label><br/>
+											<div class="col-md-3">
+												<img src="images/avatar-74x74.jpg" class="img-responsive"/>
+												<i class="fa fa-trash-o"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- // Widget END -->
+	
+						
+					</div>
+					<div class="col-md-12" style="margin-top:20px;">
+								
+							<!-- Widget -->
+							<div class="widget widget-inverse">
+								
+								
+								<div class="widget-body">
+									<div class="row">
+										<div class="col-md-12 img_thumnail">
+											<label>Other Image For Item</label><br/>
+											
+											<div class="col-md-3">
+												<img src="images/avatar-74x74.jpg" class="img-responsive"/>
+												<i class="fa fa-trash-o"></i>
+											</div>
+											<div class="col-md-3">
+												<img src="images/avatar-74x74.jpg" class="img-responsive"/>
+												<i class="fa fa-trash-o"></i>
+											</div>
+											<div class="col-md-3">
+												<img src="images/avatar-74x74.jpg" class="img-responsive"/>
+												<i class="fa fa-trash-o"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- // Widget END -->
+	
+						</div>
+
+				</div>
+				
+				
+			</div>
+
+			<button class="btn btn-success" style="width:100%;">Update</button>
+		</div>
+		<!-- // Widget END -->
+		
+	
+	</div>
+
+
+</div>
+<!-- // Content END -->
+		
+		<div class="clearfix"></div>
+		<!-- // Sidebar menu & content wrapper END -->
+		
+		<div id="footer" class="hidden-print">
+			
+			<!--  Copyright Line -->
+			<div class="copy">&copy; 2017 - <a href="http://www.onlinedukaan.com">Online Dukaan</a> - All Rights Reserved. </div>
+			<!--  End Copyright Line -->
+	
+		</div>
+		<!-- // Footer END -->
+		
+	</div>
+	<!-- // Main Container Fluid END -->
+	
+
+	
+
+	<!-- Global -->
+	
+	
+<script type="text/javascript">
+	$("#lock").click(function(){
+		$("#sender").attr('disabled', !$("#sender").attr('disabled')); 
+	});
+	$("#dis").click(function(){
+		$("#sender").attr('disabled', !$("#sender").attr('disabled')); 
+	});
+</script>
+	<script>
+	var basePath = '',
+		commonPath = '../assets/',
+		rootPath = '../',
+		DEV = false,
+		componentsPath = '../assets/components/';
+	
+	var primaryColor = '#cb4040',
+		dangerColor = '#b55151',
+		infoColor = '#466baf',
+		successColor = '#8baf46',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	
+	var themerPrimaryColor = primaryColor;
+	</script>
+	
+	
+	<script src="../assets/components/library/bootstrap/js/bootstrap.min.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/breakpoints/breakpoints.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/animations.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-switch/assets/lib/js/bootstrap-switch.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-switch/assets/custom/js/bootstrap-switch.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/uniform/assets/lib/js/jquery.uniform.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/uniform/assets/custom/js/uniform.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/fuelux-checkbox/fuelux-checkbox.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/modals/assets/js/bootbox.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/modals/assets/js/modals.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/notifications/gritter/assets/lib/js/jquery.gritter.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/notifications/gritter/assets/custom/js/gritter.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/editors/wysihtml5/assets/lib/js/wysihtml5-0.3.0_rc2.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/editors/wysihtml5/assets/lib/js/bootstrap-wysihtml5-0.0.2.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/editors/wysihtml5/assets/custom/wysihtml5.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/wizards/assets/lib/jquery.bootstrap.wizard.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/wizards/assets/custom/js/form-wizards.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/jasny-fileupload/assets/js/bootstrap-fileupload.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/button-states/button-loading/assets/js/button-loading.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-select/assets/lib/js/bootstrap-select.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-select/assets/custom/js/bootstrap-select.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/select2/assets/lib/js/select2.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/select2/assets/custom/js/select2.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/inputmask/assets/lib/jquery.inputmask.bundle.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/inputmask/assets/custom/inputmask.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-datepicker/assets/lib/js/bootstrap-datepicker.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-datepicker/assets/custom/js/bootstrap-datepicker.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-timepicker/assets/lib/js/bootstrap-timepicker.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/bootstrap-timepicker/assets/custom/js/bootstrap-timepicker.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/colorpicker-farbtastic/assets/js/farbtastic.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/elements/colorpicker-farbtastic/assets/js/colorpicker-farbtastic.init.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/holder/holder.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/sidebar.main.init.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/sidebar.collapse.init.js?v=v1.2.3"></script>
+<script src="../assets/components/helpers/themer/assets/plugins/cookie/jquery.cookie.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/core.init.js?v=v1.2.3"></script>	
+<script src="../assets/components/modules/admin/forms/file_manager/plupload/assets/lib/plupload.full.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/file_manager/plupload/assets/lib/jquery.plupload.queue/jquery.plupload.queue.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/file_manager/plupload/assets/custom/plupload.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/file_manager/dropzone/assets/lib/js/dropzone.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/forms/file_manager/dropzone/assets/custom/dropzone.init.js?v=v1.2.3"></script>
+</body>
+</html>

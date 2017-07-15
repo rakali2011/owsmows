@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html><!-- <![endif]-->
+<head>
+	<title>ONLINE DUKAAN ADMIN PANEL</title>
+	
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- 
+	**********************************************************
+	In development, use the LESS files and the less.js compiler
+	instead of the minified CSS loaded by default.
+	**********************************************************
+	<link rel="stylesheet/less" href="../assets/less/admin/module.admin.page.index.less" />
+	-->
+	
+		<!--[if lt IE 9]><link rel="stylesheet" href="../assets/components/library/bootstrap/css/bootstrap.min.css" /><![endif]-->
+	<link rel="stylesheet" href="../assets/css/admin/module.admin.page.widgets.min.css" />
+	<link rel="stylesheet" href="../assets/css/admin/style_mine.css" />
+	
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	<script src="../assets/components/library/jquery/jquery.min.js?v=v1.2.3"></script>
+<script src="../assets/components/library/jquery/jquery-migrate.min.js?v=v1.2.3"></script>
+<script src="../assets/components/library/modernizr/modernizr.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/less-js/less.min.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/charts/flot/assets/lib/excanvas.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/browser/ie/ie.prototype.polyfill.js?v=v1.2.3"></script>
+<script src="../assets/components/library/jquery-ui/js/jquery-ui.min.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js?v=v1.2.3"></script>
+</head>
+<body class="">
+
+		<div class="navbar navbar-fixed-top navbar-primary main" role="navigation">
+    
+    <div class="navbar-header pull-left">
+        <div class="navbar-brand">
+            <div class="pull-left">
+                <a href="" class="toggle-button toggle-sidebar btn-navbar"><i class="fa fa-bars"></i></a>
+            </div>
+            <a href="index.html?lang=en" class="appbrand innerL">Online Dukaan</a>
+        </div>
+    </div>
+  
+    <ul class="nav navbar-nav navbar-left">
+        <li class=" hidden-xs">
+            <form class="navbar-form navbar-left " role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type in here..."/>
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-inverse"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </li>
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle user" data-toggle="dropdown"> <img src="../assets/images/people/35/8.jpg" alt="" class="img-circle"/><span class="hidden-xs hidden-sm"> &nbsp; Adrian Demian </span> <span class="caret"></span></a>
+            <ul class="dropdown-menu list pull-right ">
+                <li><a href="my_account.html">Edit Account <i class="fa fa-pencil pull-right"></i></a></li>
+                <li><a href="#">Log out <i class="fa fa-sign-out pull-right"></i></a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right hidden-xs">
+        
+        <li class="dropdown notification hidden-sm hidden-md widget-timeline">
+            <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown"><i class="fa fa-fw fa-exclamation-circle"></i><span class="badge badge-info">4</span></a>
+            <ul class="dropdown-menu list-timeline notification_new">
+               <li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<span class="ellipsis"><a href="latest_orders.html">Melisa Ragae placed order</a></span>
+					<div class="clearfix"></div>
+				</li>
+            </ul>
+        </li>
+         
+        <li><a href="" class="menu-icon"><i class="fa fa-sign-out"></i></a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+	
+	<div id="menu" class="hidden-print hidden-xs">
+	<div class="sidebar sidebar-inverse">
+		
+		<div class="sidebarMenuWrapper">
+			<ul class="list-unstyled">
+				<li><a href="index.html?lang=en"><i class=" icon-projector-screen-line"></i><span>Dashboard</span></a></li>
+				<li class="hasSubmenu order_alert active">
+					<a href="#" data-target="#shop" data-toggle="collapse"><i class="icon-shopping-cart"></i>Orders<span>2</span></a>
+					<ul class="in " id="shop">
+						<li><a href="latest_orders.html">Latest Orders<span>2</span></a></li>
+						<li><a href="pending_orders.html">Pending Orders<span>2</span></a></li>
+						<li><a href="rejected_orders.html">Rejected Orders</a></li>
+						<li class="active"><a href="delivered_orders.html">Delivered Orders</a></li>
+					</ul>
+				</li>
+				<li class="hasSubmenu order_alert">
+					<a href="#" data-target="#item" data-toggle="collapse"><i class="icon-shopping-cart"></i>Add Items</a>
+					<ul class="collapse " id="item">
+						<li><a href="add_item.html">Add product</a></li>
+						<li><a href="shop_products.html?lang=en">Products</a></li>
+					</ul>
+				</li>
+				<li class="hasSubmenu order_alert">
+					<a href="#" data-target="#categories" data-toggle="collapse"><i class="icon-shopping-cart"></i>Categories</a>
+					<ul class="collapse " id="categories">
+						<li><a href="add_category.html">Add Categories</a></li>
+						<li><a href="view_category.html">View Categories</a></li>
+						<li><a href="add_subcategory.html">Add Sub Categories</a></li>
+						<li><a href="view_subcategory.html">View Sub Categories</a></li>
+					</ul>
+				</li>
+				<li><a href="return_policy.html"><i class=" icon-flip-camera-fill"></i><span>Return Policy</span></a></li>
+				<li><a href="dispute.html"><i class=" icon-flip-camera-fill"></i><span>Dispute Management</span></a></li>
+				<li><a href="about.html"><i class=" icon-flip-camera-fill"></i><span>About Us</span></a></li>
+				
+				
+			
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+	<div id="content"><h1 class="bg-white content-heading border-bottom">Delivered Orders</h1>
+
+
+
+<div class="innerLR">
+
+	
+	<div class="widget widget-inverse">
+		<div class="widget-head">
+			<h3 class="heading">Total Delivered Orders: <strong>2</strong></h3>
+		</div>
+		<div class="widget-body">
+			<div class="row">
+				<div class="col-md-12">
+					
+					<!-- Collapsible Widget -->
+					<div class="widget" data-toggle="collapse-widget" data-collapse-closed="true">
+						<div class="widget-head drop_head" style="background: #e8ffdf !important;"> 
+							<h4 class="heading">
+								<ul>
+									<li>Order 1</li>
+									<li>Invoice #: <span>21458</span></li>
+									<li>Waqar Ahmed</li>
+									<li style="color:green; font-weight:700;">Delivered</li>
+								
+								</ul>
+							
+							</h4>
+						</div>
+						<div class="widget-body acc_body">
+							<div class="col-md-6"><h5>Order By: <strong>Muhammad Waqar Ahmed Qureshi</strong></h5></div>
+							<div class="col-md-6"style="text-align:right;"><h5>Shipping Method: <strong>Pakistan Post</strong></h5></div>
+							<div class="col-md-12" ><h5>Delivery Address: <strong>House #198, d-block, Satellite Town, Rawalpindi</strong></h5></div>
+							
+						</div>
+						<hr class="line_mine"/>
+						<div class="widget-body acc_body">
+							<div class="col-md-1"><img src="images/orders_img.png" class="img-responsive"/></div>
+							<div class="col-md-4">
+								<h4>Nikos Barney</h4>
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+							</div>
+							<div class="col-md-1">
+								<h4>QTY: <span>1</span></h4>
+							</div>
+							<div class="col-md-2">
+								<h4><b>PKR 1500</b></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Color: <div class="red_color"></div></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Size: <p class="size_mine">S</p></h4>
+							</div>
+						</div>
+						<hr class="line_mine"/>
+						<div class="widget-body acc_body">
+							<div class="col-md-1"><img src="images/orders_img.png" class="img-responsive"/></div>
+							<div class="col-md-4">
+								<h4>Nikos Barney</h4>
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+							</div>
+							<div class="col-md-1">
+								<h4>QTY: <span>1</span></h4>
+							</div>
+							<div class="col-md-2">
+								<h4><b>PKR 1500</b></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Color: <div class="red_color"></div></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Size: <p class="size_mine">S</p></h4>
+							</div>
+						</div>
+						<hr class="line_mine"/>
+						<div class="widget-body acc_body">
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Payment Method: <strong>Cash On Delivery</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Item Total: <strong>PKR 3000</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Shipping Method: <strong>PKR 150</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Offer: <strong>N/A</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Grand Total: <strong style="color:#479c10;">PKR 3,150</strong></h5></div>
+							
+						</div>
+					</div>
+					<!-- // Collapsible Widget END -->
+					
+					
+					<!-- Collapsible Widget -->
+					<div class="widget" data-toggle="collapse-widget" data-collapse-closed="true">
+						<div class="widget-head drop_head" style="background: #e8ffdf !important;">
+							<h4 class="heading">
+								<ul>
+									<li>Order 2</li>
+									<li>Invoice #: <span>21459</span></li>
+									<li>Mohammad Maqsood</li>
+									<li style="color:green; font-weight:700;">Delivered</li> 
+								
+								</ul>
+							
+							</h4>
+						</div>
+						<div class="widget-body acc_body">
+							<div class="col-md-6"><h5>Order By: <strong>Muhammad Waqar Ahmed Qureshi</strong></h5></div>
+							<div class="col-md-6"style="text-align:right;"><h5>Shipping Method: <strong>Pakistan Post</strong></h5></div>
+							<div class="col-md-12" ><h5>Delivery Address: <strong>House #198, d-block, Satellite Town, Rawalpindi</strong></h5></div>
+							
+						</div>
+						<hr class="line_mine"/>
+						<div class="widget-body acc_body">
+							<div class="col-md-1"><img src="images/orders_img.png" class="img-responsive"/></div>
+							<div class="col-md-4">
+								<h4>Nikos Barney</h4>
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+							</div>
+							<div class="col-md-1">
+								<h4>QTY: <span>1</span></h4>
+							</div>
+							<div class="col-md-2">
+								<h4><b>PKR 1500</b></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Color: <div class="red_color"></div></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Size: <p class="size_mine">S</p></h4>
+							</div>
+						</div>
+						<hr class="line_mine"/>
+						<div class="widget-body acc_body">
+							<div class="col-md-1"><img src="images/orders_img.png" class="img-responsive"/></div>
+							<div class="col-md-4">
+								<h4>Nikos Barney</h4>
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+								<img src="images/star_yellow.png" />
+							</div>
+							<div class="col-md-1">
+								<h4>QTY: <span>1</span></h4>
+							</div>
+							<div class="col-md-2">
+								<h4><b>PKR 1500</b></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Color: <div class="red_color"></div></h4>
+							</div>
+							<div class="col-md-2">
+								<h4>Size: <p class="size_mine">S</p></h4>
+							</div>
+						</div>
+						<hr class="line_mine"/>
+						<div class="widget-body acc_body">
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Payment Method: <strong>Cash On Delivery</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Item Total: <strong>PKR 3000</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Shipping Method: <strong>PKR 150</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Offer: <strong>N/A</strong></h5></div>
+							<div class="col-md-6 col-md-offset-6"style="text-align:right;"><h5>Grand Total: <strong style="color:#479c10;">PKR 3,150</strong></h5></div>
+							
+						</div>
+					</div>
+					<!-- // Collapsible Widget END -->
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- // Collapsible Widgets END -->
+</div>
+
+
+
+
+
+
+
+	
+	
+		
+		</div>
+		<!-- // Content END -->
+		
+		<div class="clearfix"></div>
+		<!-- // Sidebar menu & content wrapper END -->
+		
+		<div id="footer" class="hidden-print">
+			
+			<!--  Copyright Line -->
+			<div class="copy">&copy; 2017 - <a href="http://www.onlinedukaan.com">Online Dukaan</a> - All Rights Reserved. </div>
+			<!--  End Copyright Line -->
+	
+		</div>
+		<!-- // Footer END -->
+		
+	</div>
+	<!-- // Main Container Fluid END -->
+	
+
+	
+
+	<!-- Global -->
+	<script>
+	var basePath = '',
+		commonPath = '../assets/',
+		rootPath = '../',
+		DEV = false,
+		componentsPath = '../assets/components/';
+	
+	var primaryColor = '#cb4040',
+		dangerColor = '#b55151',
+		infoColor = '#466baf',
+		successColor = '#8baf46',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	
+	var themerPrimaryColor = primaryColor;
+	</script>
+	
+	<script src="../assets/components/library/bootstrap/js/bootstrap.min.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/breakpoints/breakpoints.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/animations.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/charts/easy-pie/assets/lib/js/jquery.easy-pie-chart.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/charts/easy-pie/assets/custom/easy-pie.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/widgets/widget-collapsible/assets/widget-collapsible.init.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/widgets/widget-progress/assets/js/widget-progress.init.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/holder/holder.js?v=v1.2.3"></script>
+<script src="../assets/components/plugins/slimscroll/jquery.slimscroll.js?v=v1.2.3"></script>
+<script src="../assets/components/modules/admin/widgets/widget-scrollable/assets/js/widget-scrollable.init.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/sidebar.main.init.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/sidebar.collapse.init.js?v=v1.2.3"></script>
+<script src="../assets/components/helpers/themer/assets/plugins/cookie/jquery.cookie.js?v=v1.2.3"></script>
+<script src="../assets/components/core/js/core.init.js?v=v1.2.3"></script>	
+</body>
+</html>

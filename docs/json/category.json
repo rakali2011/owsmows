@@ -1,0 +1,86 @@
+{
+    "basePath": "http://s5technology.com/demo/apparel/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/category",
+    "apis": [
+        {
+            "path": "category/main",
+            "description": "Categories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Main Categories",
+                    "nickname": "mainCategory",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns a list of main categories"
+                }
+            ]
+        },
+        {
+            "path": "category/navcategories",
+            "description": "Nav Categories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Main Categories",
+                    "nickname": "navcategories",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns a list of main categories"
+                }
+            ]
+        },
+        {
+            "path": "category/sub",
+            "description": "Sub Categories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Sub Categories",
+                    "nickname": "subCategory",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "category_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "Parent/Main Category ID"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns a list of sub categories"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

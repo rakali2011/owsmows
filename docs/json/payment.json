@@ -1,0 +1,33 @@
+{
+    "basePath": "http://s5technology.com/demo/apparel/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/payment",
+    "apis": [
+        {
+            "path": "payment/method",
+            "description": "Payment Methods",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Payment Method List",
+                    "nickname": "paymentMethod",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns a list of available payment methods/options"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

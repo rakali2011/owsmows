@@ -1,0 +1,135 @@
+{
+    "basePath": "http://s5technology.com/demo/apparel/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/order",
+    "apis": [
+        {
+            "path": "order/place",
+            "description": "Place new order",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Saves new order",
+                    "nickname": "placeOrder",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "order",
+                            "required": true,
+                            "description": "order information"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Saves customer information and order details",
+                    "consumes": [
+                        "text/plain",
+                        "application/json"
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "order": {
+            "id": "order",
+            "required": [
+                "address",
+                "city",
+                "delivery_cost_amount",
+                "device_lat",
+                "device_long",
+                "device_token",
+                "name",
+                "order_detail",
+                "payment_method_id",
+                "phone",
+                "user_timezone"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "device_lat": {
+                    "type": "string"
+                },
+                "device_long": {
+                    "type": "string"
+                },
+                "user_timezone": {
+                    "type": "string"
+                },
+                "device_token": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "type": "integer"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "delivery_cost_amount": {
+                    "type": "integer"
+                },
+                "order_detail": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "orderDetail"
+                    }
+                }
+            }
+        },
+        "orderDetail": {
+            "id": "orderDetail",
+            "required": [
+                "color_id",
+                "discount_percent",
+                "product_id",
+                "product_quantity",
+                "size_id"
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "integer"
+                },
+                "product_quantity": {
+                    "type": "integer"
+                },
+                "discount_percent": {
+                    "type": "integer"
+                },
+                "color_id": {
+                    "type": "integer"
+                },
+                "size_id": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ]
+}

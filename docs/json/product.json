@@ -1,0 +1,80 @@
+{
+    "basePath": "http://localhost/apparel/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/product",
+    "apis": [
+        {
+            "path": "product/detail",
+            "description": "Products",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Product Detail",
+                    "nickname": "productDetail",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "product_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "Product Id "
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns product full detail"
+                }
+            ]
+        },
+        {
+            "path": "product/list",
+            "description": "Products",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Product List",
+                    "nickname": "product",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "page",
+                            "type": "integer",
+                            "required": true,
+                            "description": "Page number"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "category_id",
+                            "type": "integer",
+                            "required": false,
+                            "description": "Main/Sub Category Id "
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "HTTP_OK"
+                        },
+                        {
+                            "code": 204,
+                            "message": "HTTP_NO_CONTENT"
+                        }
+                    ],
+                    "notes": "Returns a list of products"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
